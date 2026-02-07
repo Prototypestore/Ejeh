@@ -13,7 +13,7 @@ fetch("content.json")
     const intro = document.createElement("p");
 intro.id = "about";
 intro.textContent =
-  "Built for cold climates, rugged terrain, and modern digital explorers.";
+  "I craft compelling work that blends creativity with purpose, showcasing my portfolio, highlighting the services I provide, and connecting with clients who value quality and vision. Every project is an opportunity to strengthen a brand, tell a story, and create lasting impact.";
 
     header.appendChild(h1);
     header.appendChild(intro);
