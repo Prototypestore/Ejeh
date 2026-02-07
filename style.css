@@ -219,17 +219,6 @@ footer img {
     min-height: 80px; /* prevent squish */
   }
 
-  /* Logo */
-  header .logo {
-    flex-shrink: 0;
-  }
-
-  header .logo img {
-    height: 70px;
-    width: auto;
-    padding-right: 1rem;
-  }
-
   /* Nav container */
   header nav {
     display: flex;
@@ -323,10 +312,6 @@ footer img {
   header {
     padding: 1.5rem 0.8rem 0.8rem;
     min-height: 70px;
-  }
-
-  header .logo img {
-    height: 60px;
   }
 
   header ul {
