@@ -11,8 +11,9 @@ fetch("content.json")
     h1.textContent = "Services";
 
     const intro = document.createElement("p");
-    intro.textContent =
-      "Built for cold climates, rugged terrain, and modern digital explorers.";
+intro.id = "about";
+intro.textContent =
+  "Built for cold climates, rugged terrain, and modern digital explorers.";
 
     header.appendChild(h1);
     header.appendChild(intro);
