@@ -226,6 +226,8 @@ footer img {
   header nav {
     position: static;
     transform: none;
+    flex: 1;
+    margin-left: 1rem;
   }
 
   header ul {
@@ -234,11 +236,13 @@ footer img {
     gap: 1.5rem;       /* enough space for Contact Us */
     justify-content: flex-end;
     align-items: center;
+    overflow-x: auto;   /* safe scroll if needed */
   }
 
   header a {
     font-size: 1rem;
     padding: 0.5rem 0.8rem;
+    white-space: nowrap;
   }
 
   /* Contact button fixes */
@@ -280,17 +284,18 @@ footer img {
   .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-template-rows: repeat(2, auto);  /* 2 rows */
     gap: 1.5rem;                          /* spacing between cards */
-    justify-items: center;                 /* center cards in cell */
-    align-items: start;
+    justify-items: stretch;                /* fill column width */
+    align-items: stretch;                  /* equal height */
   }
 
   .service-card {
     width: 100%;
-    max-width: 250px; /* keeps card readable */
     padding: 2rem 1.5rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }
 
@@ -338,12 +343,18 @@ footer img {
   /* Keep strict 2x2 grid */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 1rem;
-    justify-items: center;
-    align-items: start;
+    justify-items: stretch;
+    align-items: stretch;
   }
 
   .service-card {
-    widt
+    width: 100%;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
