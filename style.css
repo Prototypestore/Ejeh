@@ -209,16 +209,17 @@ footer img {
 
 /* ================= MOBILE: 768px and below ================= */
 @media (max-width: 768px) {
-  /* Header: logo left, nav right, safe from status bar */
+  /* Header: logo left, nav right, safe from phone status bar */
   header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 1rem 1rem; /* space from phone status bar */
+    padding: 1.5rem 1rem 1rem; /* top padding for status bar */
+    background: rgba(255, 255, 255, 0.95);
   }
 
   header .logo img {
-    height: 70px; /* visible, not tiny */
+    height: 75px; /* visible logo */
     padding: 0.5rem 1rem;
   }
 
@@ -229,14 +230,34 @@ footer img {
 
   header ul {
     display: flex;
-    flex-wrap: nowrap; /* no wrapping */
-    gap: 1.2rem;       /* big enough to prevent breaking */
+    flex-wrap: nowrap; /* prevent wrapping */
+    gap: 1.5rem;       /* enough space for Contact Us */
     justify-content: flex-end;
+    align-items: center;
   }
 
   header a {
-    font-size: 1rem;  /* tappable */
-    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  /* Contact button fixes */
+  .contact-btn {
+    min-width: 100px;   /* prevent broken button */
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1rem;
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid #111827;
+    color: #111827;
+    background: transparent;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .contact-btn:hover {
+    background: #111827;
+    color: #ffffff;
   }
 
   /* Services section */
@@ -252,19 +273,22 @@ footer img {
   .services-header p {
     font-size: 1rem;
     max-width: 90%;
+    margin: 0 auto;
   }
 
+  /* Strict 2x2 grid */
   .services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, auto);  /* 2 rows */
+    gap: 1.5rem;                          /* spacing between cards */
+    justify-items: center;                 /* center cards in cell */
+    align-items: start;
   }
 
   .service-card {
-    flex: 1 1 48%;        /* 2 per row, not squished */
-    min-width: 220px;     /* prevent shrinking too much */
-    max-width: 300px;     /* optional: keeps card reasonable size */
+    width: 100%;
+    max-width: 250px; /* keeps card readable */
     padding: 2rem 1.5rem;
     box-sizing: border-box;
   }
@@ -272,25 +296,30 @@ footer img {
 
 /* ================= EXTRA SMALL SCREENS: 480px and below ================= */
 @media (max-width: 480px) {
-  /* Header */
   header {
-    padding: 1rem 0.8rem 0.8rem; /* space from status bar */
+    padding: 1.5rem 0.8rem 0.8rem;
   }
 
   header .logo img {
-    height: 60px;
+    height: 65px; /* still visible */
   }
 
   header ul {
-    gap: 1rem; /* nav links big enough */
+    gap: 1rem;
   }
 
   header a {
     font-size: 0.95rem;
-    padding: 0.3rem 0.5rem;
+    padding: 0.4rem 0.6rem;
   }
 
-  /* Services section */
+  /* Contact button stays readable */
+  .contact-btn {
+    min-width: 90px;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+
   #content {
     padding: 3.5rem 0.8rem 3rem;
   }
@@ -306,32 +335,15 @@ footer img {
     max-width: 100%;
   }
 
+  /* Keep strict 2x2 grid */
   .services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: 1rem;
+    justify-items: center;
+    align-items: start;
   }
 
   .service-card {
-    flex: 1 1 48%;     /* 2 per row */
-    min-width: 180px;  /* prevents squishing */
-    max-width: 260px;
-    padding: 1.6rem 1.2rem;
-    box-sizing: border-box;
-  }
-
-  .service-card h3 {
-    font-size: 1.05rem;
-  }
-
-  .service-card p {
-    font-size: 0.9rem;
-  }
-
-  /* Footer adjustments */
-  footer {
-    font-size: 0.8rem;
-    padding: 1.5rem 1rem;
-  }
-}
+    widt
