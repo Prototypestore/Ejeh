@@ -261,6 +261,7 @@ footer img {
     min-width: 110px;
     font-size: 1rem;
     padding: 0.55rem 1.4rem;
+    border-radius: 9999px;
   }
 
   #content {
@@ -306,6 +307,7 @@ footer img {
     min-width: 95px;
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
+    border-radius: 9999px;
   }
 
   #content {
