@@ -207,26 +207,118 @@ footer img {
   opacity: 0.85;
 }
 
-/* =============================== RESPONSIVE =============================== */
+/* ================= MOBILE: 768px and below ================= */
 @media (max-width: 768px) {
-  header ul {
-    gap: 1.5rem;
+  /* Header: logo left, nav centered */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
   }
 
   header .logo img {
-    height: 34px;
+    height: 50px;
+    padding: 0.5rem 1rem;
   }
 
+  header nav {
+    position: static;
+    transform: none;
+  }
+
+  header ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  header a {
+    font-size: 0.95rem;
+  }
+
+  /* Services section */
   #content {
-    padding: 4rem 1.2rem;
+    padding: 3rem 1rem 4rem;
+  }
+
+  .services-header h1,
+  .services-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-header p {
+    font-size: 1rem;
+    max-width: 90%;
   }
 
   .services-grid {
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .service-card {
-    padding: 2.2rem 2rem;
+    flex: 1 1 220px;
+    padding: 2rem 1.5rem;
   }
 }
 
+/* ================= EXTRA SMALL SCREENS: 480px and below ================= */
+@media (max-width: 480px) {
+  /* Header */
+  header {
+    padding: 0.5rem 0.8rem;
+  }
+
+  header .logo img {
+    height: 40px;
+  }
+
+  header ul {
+    gap: 0.6rem;
+  }
+
+  header a {
+    font-size: 0.85rem;
+  }
+
+  /* Services section */
+  #content {
+    padding: 2rem 0.8rem 3rem;
+  }
+
+  .services-header h1,
+  .services-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .services-header p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .services-grid {
+    gap: 1rem;
+  }
+
+  .service-card {
+    flex: 1 1 180px;
+    padding: 1.6rem 1.2rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  /* Footer adjustments */
+  footer {
+    font-size: 0.8rem;
+    padding: 1.5rem 1rem;
+  }
+}
