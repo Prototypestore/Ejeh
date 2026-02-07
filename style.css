@@ -209,16 +209,16 @@ footer img {
 
 /* ================= MOBILE: 768px and below ================= */
 @media (max-width: 768px) {
-  /* Header: logo left, nav centered */
+  /* Header: logo left, nav right, safe from status bar */
   header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 1rem;
+    padding: 1.2rem 1rem 1rem; /* space from phone status bar */
   }
 
   header .logo img {
-    height: 50px;
+    height: 70px; /* visible, not tiny */
     padding: 0.5rem 1rem;
   }
 
@@ -228,23 +228,25 @@ footer img {
   }
 
   header ul {
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: nowrap; /* no wrapping */
+    gap: 1.2rem;       /* big enough to prevent breaking */
     justify-content: flex-end;
   }
 
   header a {
-    font-size: 0.95rem;
+    font-size: 1rem;  /* tappable */
+    padding: 0.3rem 0.5rem;
   }
 
   /* Services section */
   #content {
-    padding: 3rem 1rem 4rem;
+    padding: 4rem 1rem 4rem; /* space from header */
   }
 
   .services-header h1,
   .services-header h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .services-header p {
@@ -253,14 +255,18 @@ footer img {
   }
 
   .services-grid {
-    gap: 1.5rem;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1.5rem;
   }
 
   .service-card {
-    flex: 1 1 220px;
+    flex: 1 1 48%;        /* 2 per row, not squished */
+    min-width: 220px;     /* prevent shrinking too much */
+    max-width: 300px;     /* optional: keeps card reasonable size */
     padding: 2rem 1.5rem;
+    box-sizing: border-box;
   }
 }
 
@@ -268,29 +274,30 @@ footer img {
 @media (max-width: 480px) {
   /* Header */
   header {
-    padding: 0.5rem 0.8rem;
+    padding: 1rem 0.8rem 0.8rem; /* space from status bar */
   }
 
   header .logo img {
-    height: 40px;
+    height: 60px;
   }
 
   header ul {
-    gap: 0.6rem;
+    gap: 1rem; /* nav links big enough */
   }
 
   header a {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.5rem;
   }
 
   /* Services section */
   #content {
-    padding: 2rem 0.8rem 3rem;
+    padding: 3.5rem 0.8rem 3rem;
   }
 
   .services-header h1,
   .services-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .services-header p {
@@ -300,12 +307,18 @@ footer img {
   }
 
   .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
   }
 
   .service-card {
-    flex: 1 1 180px;
+    flex: 1 1 48%;     /* 2 per row */
+    min-width: 180px;  /* prevents squishing */
+    max-width: 260px;
     padding: 1.6rem 1.2rem;
+    box-sizing: border-box;
   }
 
   .service-card h3 {
