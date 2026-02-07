@@ -209,53 +209,59 @@ footer img {
 
 /* ================= MOBILE: 768px and below ================= */
 @media (max-width: 768px) {
-  /* Header: logo left, nav right, safe from phone status bar */
   header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 1rem 1rem; /* top padding for status bar */
+    padding: 1.8rem 1rem 1rem; /* extra top padding for status bar */
     background: rgba(255, 255, 255, 0.95);
+    min-height: 80px; /* prevent squish */
   }
 
+  /* Logo visible and clear */
   header .logo img {
-    height: 75px; /* visible logo */
-    padding: 0.5rem 1rem;
+    height: 70px;
+    width: auto;
+    padding: 0 1rem;
   }
 
+  /* Nav container */
   header nav {
     position: static;
     transform: none;
-    flex: 1;
-    margin-left: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;               /* take remaining space */
   }
 
+  /* Nav list */
   header ul {
     display: flex;
-    flex-wrap: nowrap; /* prevent wrapping */
-    gap: 1.5rem;       /* enough space for Contact Us */
-    justify-content: flex-end;
+    flex-wrap: nowrap;     /* all items in one row */
+    gap: 1rem;
     align-items: center;
-    overflow-x: auto;   /* safe scroll if needed */
+    justify-content: flex-end;
+    overflow: visible;     /* prevent scroll */
   }
 
-  header a {
+  /* Nav links */
+  header ul li a {
     font-size: 1rem;
     padding: 0.5rem 0.8rem;
-    white-space: nowrap;
+    white-space: nowrap;   /* prevent wrapping inside link */
   }
 
-  /* Contact button fixes */
+  /* Contact button */
   .contact-btn {
-    min-width: 100px;   /* prevent broken button */
+    min-width: 110px;       /* ensures "Contact Us" text fully visible */
     text-align: center;
-    white-space: nowrap;
+    white-space: nowrap;    /* prevents breaking text */
     font-size: 1rem;
-    padding: 0.55rem 1.2rem;
+    padding: 0.55rem 1.4rem;
     border-radius: 999px;
     border: 1px solid #111827;
-    color: #111827;
     background: transparent;
+    color: #111827;
     transition: background 0.25s ease, color 0.25s ease;
   }
 
@@ -264,29 +270,18 @@ footer img {
     color: #ffffff;
   }
 
-  /* Services section */
+  /* Ensure services section spacing */
   #content {
-    padding: 4rem 1rem 4rem; /* space from header */
+    padding: 5rem 1rem 4rem;
   }
 
-  .services-header h1,
-  .services-header h2 {
-    font-size: 1.9rem;
-  }
-
-  .services-header p {
-    font-size: 1rem;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
-  /* Strict 2x2 grid */
+  /* Strict 2x2 services grid */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 1.5rem;                          /* spacing between cards */
-    justify-items: stretch;                /* fill column width */
-    align-items: stretch;                  /* equal height */
+    gap: 1.5rem;
+    justify-items: stretch;
+    align-items: stretch;
   }
 
   .service-card {
@@ -303,58 +298,37 @@ footer img {
 @media (max-width: 480px) {
   header {
     padding: 1.5rem 0.8rem 0.8rem;
+    min-height: 70px;
   }
 
   header .logo img {
-    height: 65px; /* still visible */
+    height: 60px;
   }
 
   header ul {
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
-  header a {
+  header ul li a {
     font-size: 0.95rem;
     padding: 0.4rem 0.6rem;
   }
 
-  /* Contact button stays readable */
   .contact-btn {
-    min-width: 90px;
+    min-width: 95px;       /* ensure "Contact Us" fully readable */
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
   }
 
-  #content {
-    padding: 3.5rem 0.8rem 3rem;
-  }
-
-  .services-header h1,
-  .services-header h2 {
-    font-size: 1.6rem;
-  }
-
-  .services-header p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    max-width: 100%;
-  }
-
-  /* Keep strict 2x2 grid */
+  /* Services grid remains strict 2x2 */
   .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     justify-items: stretch;
     align-items: stretch;
   }
 
   .service-card {
-    width: 100%;
     padding: 1.5rem 1rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
   }
 }
