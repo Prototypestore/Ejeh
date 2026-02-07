@@ -2,33 +2,28 @@
   "services": [
     {
       "id": 1,
-      "title": "Web Development",
-      "description": "We build digital landscapes that stand as tall and firm as the Sierra peaks. Our custom website solutions focus on rock-solid performance, speed, and SEO readiness."
+      "title": "Graphic Design",
+      "description": "Transform ideas into visually striking creations that capture attention and communicate your message clearly. Our graphic design services ensure your brand stands out across digital and print mediums, enhancing engagement and memorability."
     },
     {
       "id": 2,
-      "title": "Application Development",
-      "description": "Navigate the digital wild with custom applications designed to handle the toughest terrains. We create user-centric mobile and web apps."
+      "title": "Branding",
+      "description": "Craft a cohesive brand identity that resonates with your audience and builds trust. From color palettes to brand voice, our branding solutions help businesses create a lasting impression, increase recognition, and drive customer loyalty."
     },
     {
       "id": 3,
-      "title": "Local SEO",
-      "description": "Be the first landmark your customers find. We elevate your local visibility so you can stand out in your community, including Google Maps optimization."
+      "title": "Logo Design",
+      "description": "Your logo is the face of your business. We design unique, versatile, and timeless logos that reflect your brand values, leave a strong impression, and work seamlessly across websites, social media, and print materials."
     },
     {
       "id": 4,
-      "title": "WordPress | Shopify | Ecommerce",
-      "description": "Create an online storefront as vast and accessible as the great outdoors. We build eCommerce platforms that turn visitors into explorers of your products."
+      "title": "Social Media Graphics",
+      "description": "Capture your audience’s attention with compelling visuals tailored for social media platforms. Our designs boost engagement, convey messages quickly, and maintain brand consistency across all posts and campaigns."
     },
     {
       "id": 5,
-      "title": "AI Business Development",
-      "description": "Are you using the correct prompts? Have you streamlined your daily computer tasks? Unlock intelligent automation with our AI development services."
-    },
-    {
-      "id": 6,
-      "title": "Back Country Fishing + Hiking Experiences",
-      "description": "Guided backcountry fishing and hiking experiences in pristine, remote landscapes. Discover hidden trails and untouched waters with expert local guides."
+      "title": "Creative Design Solutions",
+      "description": "Unlock innovative and tailored design solutions that meet your business needs. Whether it’s promotional materials, web visuals, or product packaging, our creative approach maximizes impact and strengthens your brand presence."
     }
   ]
 }
