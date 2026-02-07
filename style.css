@@ -214,27 +214,30 @@ footer img {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1.8rem 1rem 1rem; /* extra top padding for status bar */
+    padding: 1.8rem 1rem 1rem;
     background: rgba(255, 255, 255, 0.95);
-    min-height: 80px; /* prevent squish */
+    min-height: 80px;
   }
 
-  /* Nav container */
+  /* Hide logo on mobile */
+  header .logo {
+    display: none;
+  }
+
   header nav {
     display: flex;
-    flex: 1; /* take remaining space */
+    flex: 1;
     justify-content: flex-end;
     align-items: center;
   }
 
-  /* Nav list */
   header ul {
     display: flex;
-    flex-wrap: nowrap;      /* keep all items in one row */
+    flex-wrap: nowrap;
     gap: 1rem;
     justify-content: flex-end;
     align-items: center;
-    overflow-x: auto;       /* scroll if screen is narrow */
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     margin: 0;
     padding: 0;
@@ -242,19 +245,18 @@ footer img {
   }
 
   header ul li {
-    flex-shrink: 0;         /* prevent shrinking */
+    flex-shrink: 0;
   }
 
   header ul li a {
     font-size: 1rem;
     padding: 0.5rem 0.8rem;
-    white-space: nowrap;    /* prevent wrapping */
+    white-space: nowrap;
     display: inline-block;
   }
 
-  /* Contact button */
   .contact-btn {
-    min-width: 110px;       /* ensures "Contact Us" text fully visible */
+    min-width: 110px;
     text-align: center;
     white-space: nowrap;
     font-size: 1rem;
@@ -272,7 +274,6 @@ footer img {
     color: #ffffff;
   }
 
-  /* Services section spacing */
   #content {
     padding: 5rem 1rem 4rem;
   }
@@ -291,7 +292,7 @@ footer img {
   /* Strict 2x2 services grid */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     justify-items: stretch;
     align-items: stretch;
@@ -329,7 +330,21 @@ footer img {
     padding: 0.5rem 1rem;
   }
 
-  /* Keep strict 2x2 grid */
+  #content {
+    padding: 3.5rem 0.8rem 3rem;
+  }
+
+  .services-header h1,
+  .services-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .services-header p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
