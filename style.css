@@ -70,9 +70,20 @@ header {
 
 /* Logo */
 header .logo img {
-  height: 75px;
-  width: auto;
+  height: 75px;           /* adjust as needed */
+  width: 75px;            /* same as height for perfect circle */
   display: block;
+  border-radius: 50%;     /* makes the logo circular */
+  object-fit: cover;      /* keeps the logo centered and scaled nicely */
+  padding: 5px;           /* optional: adds some breathing space inside the circle */
+  background-color: #5C0B0B; /* matches your burgundy background, optional for elegance */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle depth */
+  transition: transform 0.3s ease; /* optional: hover effect */
+}
+
+/* Optional: hover effect for sleek feel */
+header .logo img:hover {
+  transform: scale(1.05); /* slightly enlarge on hover */
 }
 
 /* Nav */
