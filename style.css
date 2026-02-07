@@ -223,32 +223,40 @@ footer img {
     height: 70px;
     width: auto;
     padding: 0 1rem;
+    flex-shrink: 0; /* prevent logo from shrinking */
   }
 
   /* Nav container */
   header nav {
-    position: static;
-    transform: none;
     display: flex;
     justify-content: flex-end;
-    flex: 1;               /* take remaining space */
+    align-items: center;
+    flex: 1;                /* take remaining space */
   }
 
   /* Nav list */
   header ul {
     display: flex;
-    flex-wrap: nowrap;     /* all items in one row */
+    flex-wrap: nowrap;      /* keep items in a single row */
     gap: 1rem;
-    align-items: center;
     justify-content: flex-end;
-    overflow: visible;     /* prevent scroll */
+    align-items: center;
+    overflow-x: auto;       /* allow scroll if too long for screen */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    margin: 0;
+    padding: 0;
   }
 
   /* Nav links */
+  header ul li {
+    flex-shrink: 0;         /* prevent shrinking of each item */
+  }
+
   header ul li a {
     font-size: 1rem;
     padding: 0.5rem 0.8rem;
-    white-space: nowrap;   /* prevent wrapping inside link */
+    white-space: nowrap;    /* prevent text wrap */
+    display: inline-block;
   }
 
   /* Contact button */
@@ -262,35 +270,13 @@ footer img {
     border: 1px solid #111827;
     background: transparent;
     color: #111827;
+    flex-shrink: 0;         /* never shrink */
     transition: background 0.25s ease, color 0.25s ease;
   }
 
   .contact-btn:hover {
     background: #111827;
     color: #ffffff;
-  }
-
-  /* Ensure services section spacing */
-  #content {
-    padding: 5rem 1rem 4rem;
-  }
-
-  /* Strict 2x2 services grid */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 1.5rem;
-    justify-items: stretch;
-    align-items: stretch;
-  }
-
-  .service-card {
-    width: 100%;
-    padding: 2rem 1.5rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
   }
 }
 
@@ -307,28 +293,24 @@ footer img {
 
   header ul {
     gap: 0.8rem;
+    overflow-x: auto;        /* scroll if needed */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  header ul li {
+    flex-shrink: 0;
   }
 
   header ul li a {
     font-size: 0.95rem;
     padding: 0.4rem 0.6rem;
+    white-space: nowrap;
   }
 
   .contact-btn {
-    min-width: 95px;       /* ensure "Contact Us" fully readable */
+    min-width: 95px;        /* ensure "Contact Us" fully readable */
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
-  }
-
-  /* Services grid remains strict 2x2 */
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    justify-items: stretch;
-    align-items: stretch;
-  }
-
-  .service-card {
-    padding: 1.5rem 1rem;
+    flex-shrink: 0;
   }
 }
