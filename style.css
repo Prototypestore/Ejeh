@@ -210,6 +210,7 @@ footer img {
 /* ================= MOBILE: 768px and below ================= */
 @media (max-width: 768px) {
   header {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -218,44 +219,47 @@ footer img {
     min-height: 80px; /* prevent squish */
   }
 
-  /* Logo visible and clear */
+  /* Logo */
+  header .logo {
+    flex-shrink: 0;
+  }
+
   header .logo img {
     height: 70px;
     width: auto;
-    padding: 0 1rem;
-    flex-shrink: 0; /* prevent logo from shrinking */
+    padding-right: 1rem;
   }
 
   /* Nav container */
   header nav {
     display: flex;
+    flex: 1; /* take remaining space */
     justify-content: flex-end;
     align-items: center;
-    flex: 1;                /* take remaining space */
   }
 
   /* Nav list */
   header ul {
     display: flex;
-    flex-wrap: nowrap;      /* keep items in a single row */
+    flex-wrap: nowrap;      /* keep all items in one row */
     gap: 1rem;
     justify-content: flex-end;
     align-items: center;
-    overflow-x: auto;       /* allow scroll if too long for screen */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    overflow-x: auto;       /* scroll if screen is narrow */
+    -webkit-overflow-scrolling: touch;
     margin: 0;
     padding: 0;
+    list-style: none;
   }
 
-  /* Nav links */
   header ul li {
-    flex-shrink: 0;         /* prevent shrinking of each item */
+    flex-shrink: 0;         /* prevent shrinking */
   }
 
   header ul li a {
     font-size: 1rem;
     padding: 0.5rem 0.8rem;
-    white-space: nowrap;    /* prevent text wrap */
+    white-space: nowrap;    /* prevent wrapping */
     display: inline-block;
   }
 
@@ -263,20 +267,54 @@ footer img {
   .contact-btn {
     min-width: 110px;       /* ensures "Contact Us" text fully visible */
     text-align: center;
-    white-space: nowrap;    /* prevents breaking text */
+    white-space: nowrap;
     font-size: 1rem;
     padding: 0.55rem 1.4rem;
     border-radius: 999px;
     border: 1px solid #111827;
     background: transparent;
     color: #111827;
-    flex-shrink: 0;         /* never shrink */
+    flex-shrink: 0;
     transition: background 0.25s ease, color 0.25s ease;
   }
 
   .contact-btn:hover {
     background: #111827;
     color: #ffffff;
+  }
+
+  /* Services section spacing */
+  #content {
+    padding: 5rem 1rem 4rem;
+  }
+
+  .services-header h1,
+  .services-header h2 {
+    font-size: 1.9rem;
+  }
+
+  .services-header p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Strict 2x2 services grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1.5rem;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  .service-card {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }
 
@@ -293,24 +331,28 @@ footer img {
 
   header ul {
     gap: 0.8rem;
-    overflow-x: auto;        /* scroll if needed */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  header ul li {
-    flex-shrink: 0;
   }
 
   header ul li a {
     font-size: 0.95rem;
     padding: 0.4rem 0.6rem;
-    white-space: nowrap;
   }
 
   .contact-btn {
-    min-width: 95px;        /* ensure "Contact Us" fully readable */
+    min-width: 95px;
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
-    flex-shrink: 0;
+  }
+
+  /* Keep strict 2x2 grid */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  .service-card {
+    padding: 1.5rem 1rem;
   }
 }
