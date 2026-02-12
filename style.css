@@ -34,7 +34,6 @@ body {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  position: relative;/* Newly added */
 }
 
 /* Frost overlay for airiness */
@@ -42,8 +41,8 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(249, 249, 249, 0.78);/* 0.88 changed to 0.78 for a softer, airy look */
-  z-index: 0;
+  background: rgba(249, 249, 249, 0.88);
+  z-index: -1;
 }
 
 /* =============================== GLOBAL STRUCTURE =============================== */
